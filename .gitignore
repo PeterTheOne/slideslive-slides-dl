@@ -1,0 +1,6 @@
+venv
+*.xml
+*.jpg
+*.mp4
+*.txt
+!requirements.txt
