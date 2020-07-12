@@ -73,7 +73,7 @@ def download_slides(video_id, video_name, df, base_img_url, size, headers, wait_
     folder_name = '{0}-{1}'.format(video_id, video_name)
     for index, row in df.iterrows():
         img_url = base_img_url.format(video_id, row['slideName'], size)
-        file_path = '{0}/{1}-{2}-{3}.jpg'.format(folder_name, row['slideName'], size, row['time'])
+        file_path = '{0}/{3}-{1}-{2}.jpg'.format(folder_name, row['slideName'], size, row['time'])
         print('downloading {}'.format(file_path))
         download_save_file(img_url, file_path, headers, wait_time)
 
@@ -91,7 +91,7 @@ def create_ffmpeg_concat_file(video_id, video_name, df, size):
             duration = int(row['timeSec']) - last_time
             if index != 0:
                 f.write('duration {0}\n'.format(duration))
-            file_path = '{1}-{2}-{3}.jpg'.format(folder_name, row['slideName'], size, row['time'])
+            file_path = '{3}-{1}-{2}.jpg'.format(folder_name, row['slideName'], size, row['time'])
             f.write("file '{0}'\n".format(file_path))
             last_time = int(row['timeSec'])
             last_file_path = file_path
