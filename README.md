@@ -11,14 +11,14 @@ install and run
 ---------------
 
 - `pip3 install -r requirements.txt`
-- `python3 slideslive-slides.dl.py https://slideslive.de/38919334/technical-seo-and-modern-javascript-web-apps`
+- `python3 slideslive-slides-dl.py https://slideslive.de/38919334/technical-seo-and-modern-javascript-web-apps`
 
 
 help
 ----
 
 ```
-usage: slideslive-slides.dl.py [-h] [--size SIZE] [--useragent USERAGENT]
+usage: slideslive-slides-dl.py [-h] [--size SIZE] [--useragent USERAGENT]
                                [--basedataurl BASEDATAURL]
                                [--waittime WAITTIME]
                                url
