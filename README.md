@@ -3,7 +3,7 @@ slideslive-slides-dl
 
 a script to download the slides of a presentation on [slideslive.com](https://slideslive.com/).
 This software only downloads slides and not the video, 
-use [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) for that. Be aware of copyright law. Archival and 
+use [youtube-dl](https://youtube-dl.org) for that. Be aware of copyright law. Archival and 
 education use is encouraged.
 
 
