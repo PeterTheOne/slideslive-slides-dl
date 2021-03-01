@@ -62,7 +62,7 @@ def download_slides_xml(base_xml_url, video_id, video_name, headers, wait_time):
 
     file_path = '{0}/{1}.xml'.format(folder_name, video_id)
     if not os.path.exists(file_path):
-        xml_url = '{0}{1}/{1}.xml'.format(base_xml_url, video_id)
+        xml_url = '{0}{1}/v2/{1}.xml'.format(base_xml_url, video_id)
         print('downloading {}'.format(file_path))
         download_save_file(xml_url, file_path, headers, wait_time)
 
