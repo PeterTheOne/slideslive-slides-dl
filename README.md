@@ -6,12 +6,31 @@ This software only downloads slides and not the video,
 use [youtube-dl](https://youtube-dl.org) for that. Be aware of copyright law. Archival and 
 education use is encouraged.
 
+what this update fixes
+----------------------
+
+The original script started failing on many current SlidesLive pages because
+SlidesLive moved away from the old XML + CloudFront flow.
+
+This updated version fixes those issues:
+
+- supports modern SlidesLive pages by auto-detecting `v2/slides.json`
+- keeps legacy XML mode as a fallback for older presentations
+- fixes broken `--size` behavior on modern pages (maps to valid quality values)
+- still writes `ffmpeg_concat.txt` in the correct slide order
+- now also auto-generates an ordered PDF after download
+
+In short: URLs that previously failed with XML/SSL/403 style errors now work
+again on the modern SlidesLive format.
+
 
 install and run
 ---------------
 
 - `pip3 install -r requirements.txt`
 - `python3 slideslive-slides-dl.py https://slideslive.de/38919334/technical-seo-and-modern-javascript-web-apps`
+- modern SlidesLive pages are supported (the script auto-detects `slides.json`)
+- after download, slides are auto-organized into an ordered PDF in the same folder
 
 
 help
@@ -28,7 +47,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --size SIZE           medium or big
+  --size SIZE           medium or big, or numeric quality like 540/1080
   --useragent USERAGENT
   --basedataurl BASEDATAURL
   --waittime WAITTIME   seconds to wait after each download
