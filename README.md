@@ -6,6 +6,23 @@ This software only downloads slides and not the video,
 use [youtube-dl](https://youtube-dl.org) for that. Be aware of copyright law. Archival and 
 education use is encouraged.
 
+what this update fixes
+----------------------
+
+The original script started failing on many current SlidesLive pages because
+SlidesLive moved away from the old XML + CloudFront flow.
+
+This updated version fixes those issues:
+
+- supports modern SlidesLive pages by auto-detecting `v2/slides.json`
+- keeps legacy XML mode as a fallback for older presentations
+- fixes broken `--size` behavior on modern pages (maps to valid quality values)
+- still writes `ffmpeg_concat.txt` in the correct slide order
+- now also auto-generates an ordered PDF after download
+
+In short: URLs that previously failed with XML/SSL/403 style errors now work
+again on the modern SlidesLive format.
+
 
 install and run
 ---------------
