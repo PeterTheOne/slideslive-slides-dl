@@ -12,6 +12,8 @@ install and run
 
 - `pip3 install -r requirements.txt`
 - `python3 slideslive-slides-dl.py https://slideslive.de/38919334/technical-seo-and-modern-javascript-web-apps`
+- modern SlidesLive pages are supported (the script auto-detects `slides.json`)
+- after download, slides are auto-organized into an ordered PDF in the same folder
 
 
 help
@@ -28,7 +30,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --size SIZE           medium or big
+  --size SIZE           medium or big, or numeric quality like 540/1080
   --useragent USERAGENT
   --basedataurl BASEDATAURL
   --waittime WAITTIME   seconds to wait after each download
